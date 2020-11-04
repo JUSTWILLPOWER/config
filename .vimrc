@@ -40,7 +40,7 @@ endif
 "set laststatus=2
 set showcmd " 输入的命令显示出来，看的清楚些
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif  "回到上次的修改地方
-set scrolloff=3
+set scrolloff=4
 set cursorline
 syntax on
 filetype on        "检测文件的类型 
@@ -62,8 +62,11 @@ map <left> :vertical resize-5<CR>
 map <right> :vertical resize+5<CR>
 map <C-n> :tabe 
 "修改一个文件后，自动进行备份，备份的文件名为原文件名加“~”后缀
+"====================user define============================
 nmap <leader>y "+y
 nmap <leader>p "+p
+nmap <Leader>$ :e $MYVIMRC<CR>
+"====================user define============================
 if has("vms")
 	set nobackup
 else
