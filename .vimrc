@@ -7,6 +7,8 @@ Plug 'VundleVim/Vundle.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'https://github.com/kshenoy/vim-signature'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}"
+Plug 'godlygeek/tabular' "必要插件，安装在vim-markdown前面
+Plug 'plasticboy/vim-markdown'
 "Initialize plugin system
 call plug#end()
 filetype on
@@ -54,9 +56,10 @@ set showmatch                     "设置匹配模式，类似当输入一个左
 set ruler                                  "在编辑过程中，在右下角显示光标位置的状态行
 set incsearch
 set autochdir
+set noswapfile
 map s <nop>
-map S :w<CR>
 map Q :q<CR>
+map S :w<CR>
 map R :source $MYVIMRC<CR>
 map <left> :vertical resize-5<CR>
 map <right> :vertical resize+5<CR>
@@ -91,6 +94,9 @@ let g:SignatureMap = {
         \ 'GotoPrevMarkerAny'  :  "",
         \ 'ListLocalMarks'     :  "m/"
         \       }
+
+"====================autocmd============================
+autocmd FileType cpp nnoremap <buffer> <C-i> :r /home/willpower/c++/default/default.cpp <CR>
 
 "===coc
 let g:coc_global_extensions = [
