@@ -460,7 +460,8 @@ map gi eval fm.cd('/run/media/' + os.getenv('USER'))
 map gM cd /mnt
 map gs cd /srv
 map gp cd /tmp
-map gr cd /
+map gr cd /home/willpower/.config/ranger/
+map gr cd /home/willpower/.config/fish/
 map gR eval fm.cd(ranger.RANGERDIR)
 map g/ cd /
 map g? cd /usr/share/doc/ranger
@@ -476,7 +477,7 @@ map y. yank name_without_extension
 
 # Filesystem Operations
 map =  chmod
-
+map cw eval fm.execute_console("bulkrename") if fm.thisdir.marked_items else fm.open_console("rename ")
 map cw console rename%space
 map a  rename_append
 map A  eval fm.open_console('rename ' + fm.thisfile.relative_path.replace("%", "%%"))

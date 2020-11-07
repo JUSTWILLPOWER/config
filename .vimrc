@@ -3,7 +3,6 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 call plug#begin('~/.vim/plugged')
 Plug 'connorholyday/vim-snazzy'
-Plug 'VundleVim/Vundle.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'https://github.com/kshenoy/vim-signature'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}"
