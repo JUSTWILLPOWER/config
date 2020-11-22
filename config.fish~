@@ -20,6 +20,7 @@ function gt
 end
 alias gc "git commit "
 alias ga "git add "
+alias gaa "git add --all"
 # Emulates vim's cursor shape behavior
 # Set the normal and visual mode cursors to a block
 set fish_cursor_default block
@@ -45,3 +46,4 @@ function fish_title
     echo fish (status current-command) ' '
     pwd
 end
+

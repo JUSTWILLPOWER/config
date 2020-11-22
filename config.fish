@@ -12,11 +12,15 @@ end
 function au
 	sudo apt-get upgrade
 end
+
 function vf
 	vim /home/willpower/.config/fish/config.fish
 end
 function gt
 	git status
+end
+function rf
+	sudo rm -rf
 end
 alias gc "git commit "
 alias ga "git add "
