@@ -63,6 +63,7 @@ map <C-n> :tabe
 "修改一个文件后，自动进行备份，备份的文件名为原文件名加“~”后缀
 nmap <leader>y "+y
 nmap <leader>p "+p
+nmap <leader>$ :e $MYVIMRC<CR>
 if has("vms")
 	set nobackup
 else
@@ -92,6 +93,7 @@ let g:SignatureMap = {
 let g:coc_global_extensions = [
 			\ 'coc-json',
 			\ 'coc-vimlsp',
+			\ 'coc-python',
 			\ 'coc-marketplace',
 			\ 'coc-tsserver']
 " TextEdit might fail if hidden is not set. #tiaozhuan
