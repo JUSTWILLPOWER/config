@@ -6,6 +6,8 @@ Plug 'connorholyday/vim-snazzy'
 Plug 'vim-airline/vim-airline'
 Plug 'https://github.com/kshenoy/vim-signature'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}"
+Plug 'godlygeek/tabular' "必要插件，安装在vim-markdown前面
+Plug 'plasticboy/vim-markdown'
 "Initialize plugin system
 call plug#end()
 filetype on
@@ -39,7 +41,7 @@ endif
 "set laststatus=2
 set showcmd " 输入的命令显示出来，看的清楚些
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif  "回到上次的修改地方
-set scrolloff=3
+set scrolloff=4
 set cursorline
 syntax on
 filetype on        "检测文件的类型 
@@ -53,17 +55,19 @@ set showmatch                     "设置匹配模式，类似当输入一个左
 set ruler                                  "在编辑过程中，在右下角显示光标位置的状态行
 set incsearch
 set autochdir
+set noswapfile
 map s <nop>
-map S :w<CR>
 map Q :q<CR>
+map S :w<CR>
 map R :source $MYVIMRC<CR>
 map <left> :vertical resize-5<CR>
 map <right> :vertical resize+5<CR>
 map <C-n> :tabe 
 "修改一个文件后，自动进行备份，备份的文件名为原文件名加“~”后缀
+"====================user define============================
 nmap <leader>y "+y
 nmap <leader>p "+p
-nmap <leader>$ :e $MYVIMRC<CR>
+nmap <Leader>$ :e $MYVIMRC<CR>
 if has("vms")
 	set nobackup
 else
@@ -88,6 +92,9 @@ let g:SignatureMap = {
         \ 'GotoPrevMarkerAny'  :  "",
         \ 'ListLocalMarks'     :  "m/"
         \       }
+
+"====================autocmd============================
+autocmd FileType cpp nnoremap <buffer> <C-i> :r /home/willpower/c++/default/default.cpp <CR>
 
 "===coc
 let g:coc_global_extensions = [
